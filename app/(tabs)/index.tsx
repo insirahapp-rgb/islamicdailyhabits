@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import { useRouter } from 'expo-router';
+import { Redirect } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { ScreenContainer } from '../../src/components/layout';
 import { Card } from '../../src/components/ui';
@@ -18,15 +18,12 @@ const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
 export default function LifeCounterScreen() {
   const { t, i18n } = useTranslation();
-  const router = useRouter();
   const { name, birthDate, expectedAge, onboardingCompleted } = useUserStore();
   const stats = useCountdown(birthDate, expectedAge);
 
-  useEffect(() => {
-    if (!onboardingCompleted) {
-      router.replace('/onboarding');
-    }
-  }, [onboardingCompleted]);
+  if (!onboardingCompleted) {
+    return <Redirect href="/onboarding" />;
+  }
 
   const dailyWisdom = getDailyWisdom();
   const lang = i18n.language as 'tr' | 'en';
