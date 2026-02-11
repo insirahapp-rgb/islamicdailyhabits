@@ -25,7 +25,10 @@
     "seconds": "Seconds",
     "approxRemaining": "~{{years}} years, {{months}} months left",
     "weekGrid": "Life Grid",
-    "eachSquare": "Each square = 1 week"
+    "eachSquare": "Each square = 1 week",
+    "ummahHadith": "أعمار أمتي ما بين الستين إلى السبعين وأقلهم من يجوز ذلك",
+    "ummahHadithTranslation": "\"The lifespan of my ummah is between 60 and 70 years. Few of them exceed that.\"",
+    "ummahHadithRef": "Tirmidhi, Zuhd, 24"
   },
   "tracker": {
     "title": "Daily Time Tracker",
@@ -39,7 +42,35 @@
     "hoursUnit": "hours",
     "addHours": "Add Hours",
     "save": "Save",
-    "noEntries": "No entries for today yet"
+    "noEntries": "No entries for today yet",
+    "dailyGoals": "Daily Goals",
+    "addTask": "Add a task...",
+    "noTasks": "No tasks added yet",
+    "allCompleted": "Congratulations! You completed all tasks for today!",
+    "tasksCompleted": "{{done}}/{{total}} tasks completed",
+    "streak": "Streak",
+    "streakDays": "{{count}} days",
+    "timeAllocation": "Time Allocation",
+    "addCategory": "Add Category",
+    "categoryName": "Category name...",
+    "customCategory": "Custom Category",
+    "selectColor": "Select Color",
+    "selectIcon": "Select Icon"
+  },
+  "rewards": {
+    "title": "Rewards",
+    "sabr": "Patience Reward",
+    "sabrDesc": "3 days in a row! Patience is half of faith.",
+    "istikrar": "Consistency Reward",
+    "istikrarDesc": "7 days in a row! The most beloved deeds are those done consistently, even if small.",
+    "azim": "Determination Reward",
+    "azimDesc": "14 days in a row! Whoever treads a path of good, they earn the reward of that path.",
+    "mudavemet": "Perseverance Reward",
+    "mudavemetDesc": "30 days in a row! When Allah loves a servant's deed, He makes it constant.",
+    "ihsan": "Excellence Reward",
+    "ihsanDesc": "60 days in a row! Worship Allah as if you see Him.",
+    "locked": "Locked",
+    "earned": "Earned"
   },
   "categories": {
     "worship": "Worship",
@@ -49,7 +80,7 @@
     "freeTime": "Free Time"
   },
   "wisdom": {
-    "title": "Verses & Hadiths",
+    "title": "Wisdom",
     "dailyWisdom": "Wisdom of the Day",
     "all": "All",
     "quran": "Quran",
@@ -58,23 +89,30 @@
     "share": "Share",
     "bookmark": "Save",
     "related": "Related",
-    "noBookmarks": "No bookmarks yet"
+    "noBookmarks": "No bookmarks yet",
+    "verseCount": "{{count}} verses/hadiths"
   },
   "settings": {
     "title": "Settings",
     "profile": "Profile",
     "name": "Name",
     "birthDate": "Birth Date",
-    "expectedAge": "Expected Age",
+    "expectedAge": "Life Expectancy",
     "preferences": "Preferences",
     "language": "Language",
     "languageTr": "Türkçe",
     "languageEn": "English",
+    "theme": "Theme",
+    "themeDark": "Dark",
+    "themeLight": "Light",
     "about": "About",
     "aboutText": "Vakit is an app developed to remind the value of time in Islam.",
     "version": "Version",
     "feedback": "Feedback",
-    "reset": "Reset"
+    "reset": "Reset",
+    "day": "Day",
+    "month": "Month",
+    "year": "Year"
   },
   "onboarding": {
     "welcome": "Welcome",

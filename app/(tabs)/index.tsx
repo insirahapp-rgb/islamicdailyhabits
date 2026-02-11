@@ -56,6 +56,14 @@ export default function LifeCounterScreen() {
         <Text style={styles.greeting}>{t('lifeCounter.greeting', { name })}</Text>
       ) : null}
 
+      {/* Fixed Ummah Lifespan Hadith */}
+      <Card style={styles.hadithCard}>
+        <Text style={styles.hadithArabic}>{t('lifeCounter.ummahHadith')}</Text>
+        <View style={styles.hadithDivider} />
+        <Text style={styles.hadithTranslation}>{t('lifeCounter.ummahHadithTranslation')}</Text>
+        <Text style={styles.hadithRef}>— {t('lifeCounter.ummahHadithRef')}</Text>
+      </Card>
+
       {/* Circular Progress Ring */}
       <View style={styles.ringContainer}>
         <Svg width={RING_SIZE} height={RING_SIZE}>
@@ -185,7 +193,7 @@ export default function LifeCounterScreen() {
         </View>
       </Card>
 
-      {/* Islamic Quote */}
+      {/* Daily Islamic Quote */}
       <Card style={styles.quoteCard}>
         <Text style={styles.quoteArabic}>{dailyWisdom.arabic}</Text>
         <View style={styles.quoteDivider} />
@@ -205,6 +213,11 @@ const styles = StyleSheet.create({
   loadingText: { color: '#1B7A3D', fontSize: 28, fontWeight: '700' },
   title: { color: '#FFFFFF', fontSize: 28, fontWeight: '700', textAlign: 'center', marginTop: 8 },
   greeting: { color: '#B0B0B0', fontSize: 16, textAlign: 'center', marginTop: 4, marginBottom: 8 },
+  hadithCard: { marginTop: 12, marginBottom: 8, borderColor: 'rgba(27, 122, 61, 0.3)', borderWidth: 1, backgroundColor: 'rgba(27, 122, 61, 0.08)' },
+  hadithArabic: { color: '#E8D5A3', fontSize: 18, lineHeight: 34, textAlign: 'right', writingDirection: 'rtl' },
+  hadithDivider: { height: 1, backgroundColor: 'rgba(27, 122, 61, 0.2)', marginVertical: 10 },
+  hadithTranslation: { color: '#B0B0B0', fontSize: 14, lineHeight: 22, fontStyle: 'italic' },
+  hadithRef: { color: '#1B7A3D', fontSize: 12, marginTop: 6 },
   ringContainer: { alignItems: 'center', justifyContent: 'center', marginVertical: 20, position: 'relative' },
   ringCenter: { position: 'absolute', alignItems: 'center' },
   percentText: { color: '#C9A84C', fontSize: 36, fontWeight: '700' },

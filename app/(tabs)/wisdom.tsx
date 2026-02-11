@@ -9,9 +9,16 @@ import { AdBanner } from '../../src/components/ui/AdBanner';
 import { useWisdomStore } from '../../src/stores/useWisdomStore';
 import { useDailyWisdom } from '../../src/hooks/useDailyWisdom';
 import { getAllWisdom, getVerses, getHadiths } from '../../src/utils/dailyWisdom';
-import { WisdomItem, WisdomType } from '../../src/types/verse';
+import { WisdomItem } from '../../src/types/verse';
 
 type FilterType = 'all' | 'quran' | 'hadith' | 'bookmarks';
+
+const FILTER_ICONS: Record<FilterType, string> = {
+  all: 'book-open-page-variant',
+  quran: 'book-cross',
+  hadith: 'script-text',
+  bookmarks: 'bookmark-multiple',
+};
 
 export default function WisdomScreen() {
   const { t, i18n } = useTranslation();
@@ -71,31 +78,50 @@ export default function WisdomScreen() {
     );
   };
 
+  const ListHeader = () => (
+    <>
+      {/* Daily Wisdom Banner */}
+      <Card style={styles.dailyCard}>
+        <View style={styles.dailyHeader}>
+          <MaterialCommunityIcons name="star-four-points" size={16} color="#C9A84C" />
+          <Text style={styles.dailyLabel}>{t('wisdom.dailyWisdom')}</Text>
+          <MaterialCommunityIcons name="star-four-points" size={16} color="#C9A84C" />
+        </View>
+        <Text style={styles.dailyArabic}>{dailyWisdom.arabic}</Text>
+        <View style={styles.verseDivider} />
+        <Text style={styles.dailyTranslation}>
+          {dailyWisdom.translations[lang]}
+        </Text>
+        <Text style={styles.dailyReference}>— {dailyWisdom.reference[lang]}</Text>
+      </Card>
+
+      {/* Count */}
+      <Text style={styles.countText}>
+        {t('wisdom.verseCount', { count: filteredData.length })}
+      </Text>
+    </>
+  );
+
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
       <View style={styles.container}>
+        {/* Title Row */}
         <Text style={styles.screenTitle}>{t('wisdom.title')}</Text>
 
-        {/* Daily Wisdom Banner */}
-        <Card style={styles.dailyCard}>
-          <Text style={styles.dailyLabel}>{t('wisdom.dailyWisdom')}</Text>
-          <Text style={styles.dailyArabic}>{dailyWisdom.arabic}</Text>
-          <View style={styles.verseDivider} />
-          <Text style={styles.dailyTranslation}>
-            {dailyWisdom.translations[lang]}
-          </Text>
-          <Text style={styles.dailyReference}>— {dailyWisdom.reference[lang]}</Text>
-        </Card>
-
-        {/* Filter Tabs */}
-        <View style={styles.filterRow}>
+        {/* Full-width Segmented Filter */}
+        <View style={styles.segmentedControl}>
           {filters.map((f) => (
             <TouchableOpacity
               key={f.key}
-              style={[styles.filterChip, filter === f.key && styles.filterChipActive]}
+              style={[styles.segmentTab, filter === f.key && styles.segmentTabActive]}
               onPress={() => setFilter(f.key)}
             >
-              <Text style={[styles.filterText, filter === f.key && styles.filterTextActive]}>
+              <MaterialCommunityIcons
+                name={FILTER_ICONS[f.key] as any}
+                size={18}
+                color={filter === f.key ? '#1B7A3D' : '#666666'}
+              />
+              <Text style={[styles.segmentText, filter === f.key && styles.segmentTextActive]}>
                 {f.label}
               </Text>
             </TouchableOpacity>
@@ -109,6 +135,7 @@ export default function WisdomScreen() {
           keyExtractor={(item) => item.id}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={styles.listContent}
+          ListHeaderComponent={ListHeader}
           ListEmptyComponent={
             <Text style={styles.emptyText}>
               {filter === 'bookmarks' ? t('wisdom.noBookmarks') : ''}
@@ -123,19 +150,21 @@ export default function WisdomScreen() {
 
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: '#0A0A0A' },
-  container: { flex: 1, padding: 16 },
-  screenTitle: { color: '#FFFFFF', fontSize: 24, fontWeight: '700', marginBottom: 16 },
-  dailyCard: { marginBottom: 16, borderColor: 'rgba(201, 168, 76, 0.3)' },
-  dailyLabel: { color: '#C9A84C', fontSize: 13, fontWeight: '600', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 },
+  container: { flex: 1, paddingHorizontal: 16 },
+  screenTitle: { color: '#FFFFFF', fontSize: 24, fontWeight: '700', marginBottom: 12 },
+  segmentedControl: { flexDirection: 'row', backgroundColor: '#1A1A1A', borderRadius: 12, padding: 4, marginBottom: 12, borderWidth: 1, borderColor: '#333333' },
+  segmentTab: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 4, paddingVertical: 10, borderRadius: 10 },
+  segmentTabActive: { backgroundColor: 'rgba(27, 122, 61, 0.15)' },
+  segmentText: { color: '#666666', fontSize: 11, fontWeight: '600' },
+  segmentTextActive: { color: '#1B7A3D' },
+  dailyCard: { marginBottom: 12, borderColor: 'rgba(201, 168, 76, 0.3)' },
+  dailyHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, marginBottom: 10 },
+  dailyLabel: { color: '#C9A84C', fontSize: 13, fontWeight: '600', textTransform: 'uppercase', letterSpacing: 1 },
   dailyArabic: { color: '#E8D5A3', fontSize: 20, lineHeight: 36, textAlign: 'right', writingDirection: 'rtl' },
   verseDivider: { height: 1, backgroundColor: 'rgba(201, 168, 76, 0.2)', marginVertical: 10 },
   dailyTranslation: { color: '#B0B0B0', fontSize: 14, lineHeight: 22 },
   dailyReference: { color: '#666666', fontSize: 12, marginTop: 6, fontStyle: 'italic' },
-  filterRow: { flexDirection: 'row', gap: 8, marginBottom: 12 },
-  filterChip: { paddingHorizontal: 14, paddingVertical: 7, borderRadius: 20, borderWidth: 1, borderColor: '#333333', backgroundColor: '#1A1A1A' },
-  filterChipActive: { borderColor: '#1B7A3D', backgroundColor: 'rgba(27, 122, 61, 0.15)' },
-  filterText: { color: '#666666', fontSize: 13, fontWeight: '500' },
-  filterTextActive: { color: '#1B7A3D' },
+  countText: { color: '#666666', fontSize: 12, marginBottom: 8 },
   listContent: { paddingBottom: 16 },
   verseCard: { marginBottom: 10, padding: 14 },
   cardHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },

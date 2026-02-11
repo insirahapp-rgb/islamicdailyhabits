@@ -25,7 +25,10 @@
     "seconds": "Saniye",
     "approxRemaining": "~{{years}} yıl, {{months}} ay kaldı",
     "weekGrid": "Hayat Izgarası",
-    "eachSquare": "Her kare = 1 hafta"
+    "eachSquare": "Her kare = 1 hafta",
+    "ummahHadith": "أعمار أمتي ما بين الستين إلى السبعين وأقلهم من يجوز ذلك",
+    "ummahHadithTranslation": "\"Ümmetimin ömürleri 60 ile 70 arasındadır. Onlardan pek azı bunu aşar.\"",
+    "ummahHadithRef": "Tirmizî, Zühd, 24"
   },
   "tracker": {
     "title": "Günlük Zaman Takibi",
@@ -39,7 +42,35 @@
     "hoursUnit": "saat",
     "addHours": "Saat Ekle",
     "save": "Kaydet",
-    "noEntries": "Bugün henüz kayıt yok"
+    "noEntries": "Bugün henüz kayıt yok",
+    "dailyGoals": "Günlük Görevler",
+    "addTask": "Görev ekle...",
+    "noTasks": "Henüz görev eklenmemiş",
+    "allCompleted": "Tebrikler! Bugünkü görevlerini tamamladın!",
+    "tasksCompleted": "{{done}}/{{total}} görev tamamlandı",
+    "streak": "Seri",
+    "streakDays": "{{count}} gün",
+    "timeAllocation": "Zaman Dağılımı",
+    "addCategory": "Kategori Ekle",
+    "categoryName": "Kategori adı...",
+    "customCategory": "Özel Kategori",
+    "selectColor": "Renk Seç",
+    "selectIcon": "Simge Seç"
+  },
+  "rewards": {
+    "title": "Mükâfatlar",
+    "sabr": "Sabır Mükâfatı",
+    "sabrDesc": "3 gün üst üste görevlerini tamamladın! Sabır imanın yarısıdır.",
+    "istikrar": "İstikrar Mükâfatı",
+    "istikrarDesc": "7 gün üst üste! Amellerin en sevimli olanı, az da olsa devamlı olanıdır.",
+    "azim": "Azim Mükâfatı",
+    "azimDesc": "14 gün üst üste! Kim bir hayır yoluna girerse, o yolun ecri de ona verilir.",
+    "mudavemet": "Müdâvemet Mükâfatı",
+    "mudavemetDesc": "30 gün üst üste! Allah bir kulun amelini sevdiğinde onu devamlı kılar.",
+    "ihsan": "İhsan Mükâfatı",
+    "ihsanDesc": "60 gün üst üste! Sen sanki Allah'ı görüyormuşsun gibi ibadet et.",
+    "locked": "Kilitli",
+    "earned": "Kazanıldı"
   },
   "categories": {
     "worship": "İbadet",
@@ -49,7 +80,7 @@
     "freeTime": "Boş Vakit"
   },
   "wisdom": {
-    "title": "Ayetler ve Hadisler",
+    "title": "Hikmet",
     "dailyWisdom": "Günün Hikmeti",
     "all": "Tümü",
     "quran": "Kur'an",
@@ -58,23 +89,30 @@
     "share": "Paylaş",
     "bookmark": "Kaydet",
     "related": "İlgili",
-    "noBookmarks": "Henüz kaydedilen yok"
+    "noBookmarks": "Henüz kaydedilen yok",
+    "verseCount": "{{count}} ayet/hadis"
   },
   "settings": {
     "title": "Ayarlar",
     "profile": "Profil",
     "name": "İsim",
     "birthDate": "Doğum Tarihi",
-    "expectedAge": "Beklenen Yaş",
+    "expectedAge": "Tahmini Ömür",
     "preferences": "Tercihler",
     "language": "Dil",
     "languageTr": "Türkçe",
     "languageEn": "English",
+    "theme": "Tema",
+    "themeDark": "Koyu",
+    "themeLight": "Açık",
     "about": "Hakkında",
     "aboutText": "Vakit, İslam'da zamanın kıymetini hatırlatmak amacıyla geliştirilmiş bir uygulamadır.",
     "version": "Sürüm",
     "feedback": "Geri Bildirim",
-    "reset": "Sıfırla"
+    "reset": "Sıfırla",
+    "day": "Gün",
+    "month": "Ay",
+    "year": "Yıl"
   },
   "onboarding": {
     "welcome": "Hoş Geldiniz",
