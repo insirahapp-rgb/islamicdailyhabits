@@ -6,7 +6,8 @@ export interface Task {
   id: string;
   text: string;
   completed: boolean;
-  categoryId?: string;
+  categoryId: string;
+  hours: number;
 }
 
 export interface CustomCategory {
@@ -40,7 +41,7 @@ interface TaskState {
   longestStreak: number;
   lastCompletedDate: string | null;
 
-  addTask: (date: string, text: string, categoryId?: string) => void;
+  addTask: (date: string, text: string, categoryId: string, hours: number) => void;
   toggleTask: (date: string, taskId: string) => void;
   removeTask: (date: string, taskId: string) => void;
   addCustomCategory: (name: string, color: string, icon: string) => void;
@@ -67,13 +68,13 @@ export const useTaskStore = create<TaskState>()(
       longestStreak: 0,
       lastCompletedDate: null,
 
-      addTask: (date, text, categoryId) =>
+      addTask: (date, text, categoryId, hours) =>
         set((state) => ({
           dailyTasks: {
             ...state.dailyTasks,
             [date]: [
               ...(state.dailyTasks[date] || []),
-              { id: generateId(), text, completed: false, categoryId },
+              { id: generateId(), text, completed: false, categoryId, hours },
             ],
           },
         })),
@@ -89,12 +90,21 @@ export const useTaskStore = create<TaskState>()(
         }),
 
       removeTask: (date, taskId) =>
-        set((state) => ({
-          dailyTasks: {
-            ...state.dailyTasks,
-            [date]: (state.dailyTasks[date] || []).filter((t) => t.id !== taskId),
-          },
-        })),
+        set((state) => {
+          const remaining = (state.dailyTasks[date] || []).filter((t) => t.id !== taskId);
+          const allDone = remaining.length > 0 && remaining.every((t) => t.completed);
+          let streakUpdates: Partial<TaskState> = {};
+          if (!allDone && state.lastCompletedDate === date) {
+            streakUpdates = {
+              currentStreak: Math.max(0, state.currentStreak - 1),
+              lastCompletedDate: state.currentStreak > 1 ? getPreviousDate(date) : null,
+            };
+          }
+          return {
+            dailyTasks: { ...state.dailyTasks, [date]: remaining },
+            ...streakUpdates,
+          };
+        }),
 
       addCustomCategory: (name, color, icon) =>
         set((state) => ({

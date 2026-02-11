@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { StyleSheet } from 'react-native';
 import '../src/i18n';
+import { useThemeColors } from '../src/hooks/useThemeColors';
 
 export default function RootLayout() {
+  const tc = useThemeColors();
   return (
-    <GestureHandlerRootView style={styles.root}>
-      <StatusBar style="light" />
-      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: '#0A0A0A' } }}>
+    <GestureHandlerRootView style={[styles.root, { backgroundColor: tc.background }]}>
+      <StatusBar style={tc.statusBarStyle} />
+      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: tc.background } }}>
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="onboarding" options={{ animation: 'fade' }} />
         <Stack.Screen name="verse/[id]" options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
@@ -19,5 +21,5 @@ export default function RootLayout() {
 }
 
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: '#0A0A0A' },
+  root: { flex: 1 },
 });

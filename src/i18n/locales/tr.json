@@ -55,7 +55,10 @@
     "categoryName": "Kategori adı...",
     "customCategory": "Özel Kategori",
     "selectColor": "Renk Seç",
-    "selectIcon": "Simge Seç"
+    "selectIcon": "Simge Seç",
+    "selectCategory": "Kategori seç",
+    "duration": "Süre",
+    "taskHours": "{{hours}}s"
   },
   "rewards": {
     "title": "Mükâfatlar",
@@ -83,7 +86,7 @@
     "title": "Hikmet",
     "dailyWisdom": "Günün Hikmeti",
     "all": "Tümü",
-    "quran": "Kur'an",
+    "quran": "Kur'an-ı Kerim",
     "hadith": "Hadis",
     "bookmarks": "Kaydedilenler",
     "share": "Paylaş",

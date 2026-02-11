@@ -1,4 +1,4 @@
-export const colors = {
+export const darkColors = {
   background: '#0A0A0A',
   surface: '#1A1A1A',
   surfaceElevated: '#242424',
@@ -26,4 +26,45 @@ export const colors = {
   chartFilled: '#1B7A3D',
   chartEmpty: '#2A2A2A',
   chartCurrent: '#C9A84C',
+  tabBarBg: '#0D0D0D',
+  tabBarBorder: 'rgba(27, 122, 61, 0.15)',
+  statusBarStyle: 'light' as const,
 };
+
+export const lightColors = {
+  background: '#F5F5F0',
+  surface: '#FFFFFF',
+  surfaceElevated: '#FAFAFA',
+  surfaceBorder: '#E0E0E0',
+  primary: '#1B7A3D',
+  primaryLight: '#2EA355',
+  primaryDark: '#0F5C2A',
+  primaryMuted: 'rgba(27, 122, 61, 0.1)',
+  accent: '#A08630',
+  accentLight: '#C9A84C',
+  accentDark: '#7A6520',
+  accentMuted: 'rgba(160, 134, 48, 0.15)',
+  textPrimary: '#1A1A1A',
+  textSecondary: '#555555',
+  textMuted: '#999999',
+  textArabic: '#6B5B2E',
+  worship: '#1B7A3D',
+  knowledge: '#1976D2',
+  sleep: '#7B1FA2',
+  work: '#F57C00',
+  freeTime: '#546E7A',
+  error: '#D32F2F',
+  warning: '#F57C00',
+  success: '#388E3C',
+  chartFilled: '#1B7A3D',
+  chartEmpty: '#E0E0E0',
+  chartCurrent: '#A08630',
+  tabBarBg: '#FFFFFF',
+  tabBarBorder: '#E0E0E0',
+  statusBarStyle: 'dark' as const,
+};
+
+export type ThemeColors = typeof darkColors;
+
+// Backward compatibility
+export const colors = darkColors;

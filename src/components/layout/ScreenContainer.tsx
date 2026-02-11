@@ -2,6 +2,7 @@ import React from 'react';
 import { View, ScrollView, StyleSheet, ViewStyle } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { AdBanner } from '../ui/AdBanner';
+import { useThemeColors } from '../../hooks/useThemeColors';
 
 interface ScreenContainerProps {
   children: React.ReactNode;
@@ -11,8 +12,9 @@ interface ScreenContainerProps {
 }
 
 export function ScreenContainer({ children, scrollable = true, style, showAd = true }: ScreenContainerProps) {
+  const tc = useThemeColors();
   return (
-    <SafeAreaView style={styles.safe} edges={['top']}>
+    <SafeAreaView style={[styles.safe, { backgroundColor: tc.background }]} edges={['top']}>
       {scrollable ? (
         <ScrollView
           style={styles.scroll}
@@ -32,7 +34,6 @@ export function ScreenContainer({ children, scrollable = true, style, showAd = t
 const styles = StyleSheet.create({
   safe: {
     flex: 1,
-    backgroundColor: '#0A0A0A',
   },
   scroll: {
     flex: 1,

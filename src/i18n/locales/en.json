@@ -55,7 +55,10 @@
     "categoryName": "Category name...",
     "customCategory": "Custom Category",
     "selectColor": "Select Color",
-    "selectIcon": "Select Icon"
+    "selectIcon": "Select Icon",
+    "selectCategory": "Select category",
+    "duration": "Duration",
+    "taskHours": "{{hours}}h"
   },
   "rewards": {
     "title": "Rewards",
@@ -83,7 +86,7 @@
     "title": "Wisdom",
     "dailyWisdom": "Wisdom of the Day",
     "all": "All",
-    "quran": "Quran",
+    "quran": "Quran Al-Karim",
     "hadith": "Hadith",
     "bookmarks": "Bookmarks",
     "share": "Share",

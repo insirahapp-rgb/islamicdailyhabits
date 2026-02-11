@@ -1,4 +1,5 @@
-export type CategoryId = 'worship' | 'knowledge' | 'sleep' | 'work' | 'free_time';
+export type BuiltinCategoryId = 'worship' | 'knowledge' | 'sleep' | 'work' | 'free_time';
+export type CategoryId = BuiltinCategoryId | (string & {});
 
 export interface TimeCategory {
   id: CategoryId;
