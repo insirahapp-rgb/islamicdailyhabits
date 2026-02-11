@@ -1,0 +1,107 @@
+{
+  "app": {
+    "name": "Vakit"
+  },
+  "tabs": {
+    "life": "Life",
+    "tracker": "Tracker",
+    "wisdom": "Wisdom",
+    "settings": "Settings"
+  },
+  "lifeCounter": {
+    "title": "Life Counter",
+    "greeting": "Hello, {{name}}",
+    "lived": "lived",
+    "remaining": "remaining",
+    "weeksLived": "Weeks Lived",
+    "weeksRemaining": "Weeks Remaining",
+    "daysLived": "Days Lived",
+    "daysRemaining": "Days Remaining",
+    "years": "Years",
+    "months": "Months",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "approxRemaining": "~{{years}} years, {{months}} months left",
+    "weekGrid": "Life Grid",
+    "eachSquare": "Each square = 1 week"
+  },
+  "tracker": {
+    "title": "Daily Time Tracker",
+    "today": "Today",
+    "totalLogged": "Total Logged",
+    "remaining": "Remaining",
+    "history": "History",
+    "weeklySummary": "Weekly Summary",
+    "everyMinute": "Every minute is a blessing",
+    "overLimit": "You are exceeding 24 hours!",
+    "hoursUnit": "hours",
+    "addHours": "Add Hours",
+    "save": "Save",
+    "noEntries": "No entries for today yet"
+  },
+  "categories": {
+    "worship": "Worship",
+    "knowledge": "Knowledge",
+    "sleep": "Sleep",
+    "work": "Work",
+    "freeTime": "Free Time"
+  },
+  "wisdom": {
+    "title": "Verses & Hadiths",
+    "dailyWisdom": "Wisdom of the Day",
+    "all": "All",
+    "quran": "Quran",
+    "hadith": "Hadith",
+    "bookmarks": "Bookmarks",
+    "share": "Share",
+    "bookmark": "Save",
+    "related": "Related",
+    "noBookmarks": "No bookmarks yet"
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Profile",
+    "name": "Name",
+    "birthDate": "Birth Date",
+    "expectedAge": "Expected Age",
+    "preferences": "Preferences",
+    "language": "Language",
+    "languageTr": "Türkçe",
+    "languageEn": "English",
+    "about": "About",
+    "aboutText": "Vakit is an app developed to remind the value of time in Islam.",
+    "version": "Version",
+    "feedback": "Feedback",
+    "reset": "Reset"
+  },
+  "onboarding": {
+    "welcome": "Welcome",
+    "appName": "Vakit",
+    "tagline": "Live every moment of your life consciously",
+    "start": "Start",
+    "whyBirthDate": "We need your birth date to calculate your life awareness.",
+    "enterBirthDate": "Your Birth Date",
+    "selectGender": "Your Gender",
+    "male": "Male",
+    "female": "Female",
+    "expectedAgeInfo": "Prophet Muhammad (PBUH): 'The lifespan of my ummah is between 60 and 70.'",
+    "continue": "Continue",
+    "complete": "Complete",
+    "skip": "Skip"
+  },
+  "ad": {
+    "sponsorText": "Want to Advertise / Become a Sponsor?",
+    "contactUs": "Contact Us"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "next": "Next",
+    "done": "Done"
+  }
+}

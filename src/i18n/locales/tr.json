@@ -1,0 +1,107 @@
+{
+  "app": {
+    "name": "Vakit"
+  },
+  "tabs": {
+    "life": "Ömür",
+    "tracker": "Zaman",
+    "wisdom": "Hikmet",
+    "settings": "Ayarlar"
+  },
+  "lifeCounter": {
+    "title": "Ömür Sayacı",
+    "greeting": "Merhaba, {{name}}",
+    "lived": "yaşanmış",
+    "remaining": "kalan",
+    "weeksLived": "Yaşanan Haftalar",
+    "weeksRemaining": "Kalan Haftalar",
+    "daysLived": "Yaşanan Günler",
+    "daysRemaining": "Kalan Günler",
+    "years": "Yıl",
+    "months": "Ay",
+    "days": "Gün",
+    "hours": "Saat",
+    "minutes": "Dakika",
+    "seconds": "Saniye",
+    "approxRemaining": "~{{years}} yıl, {{months}} ay kaldı",
+    "weekGrid": "Hayat Izgarası",
+    "eachSquare": "Her kare = 1 hafta"
+  },
+  "tracker": {
+    "title": "Günlük Zaman Takibi",
+    "today": "Bugün",
+    "totalLogged": "Toplam Kaydedilen",
+    "remaining": "Kalan",
+    "history": "Geçmiş",
+    "weeklySummary": "Haftalık Özet",
+    "everyMinute": "Her dakika bir nimet",
+    "overLimit": "24 saati aşıyorsunuz!",
+    "hoursUnit": "saat",
+    "addHours": "Saat Ekle",
+    "save": "Kaydet",
+    "noEntries": "Bugün henüz kayıt yok"
+  },
+  "categories": {
+    "worship": "İbadet",
+    "knowledge": "İlim",
+    "sleep": "Uyku",
+    "work": "İş",
+    "freeTime": "Boş Vakit"
+  },
+  "wisdom": {
+    "title": "Ayetler ve Hadisler",
+    "dailyWisdom": "Günün Hikmeti",
+    "all": "Tümü",
+    "quran": "Kur'an",
+    "hadith": "Hadis",
+    "bookmarks": "Kaydedilenler",
+    "share": "Paylaş",
+    "bookmark": "Kaydet",
+    "related": "İlgili",
+    "noBookmarks": "Henüz kaydedilen yok"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "profile": "Profil",
+    "name": "İsim",
+    "birthDate": "Doğum Tarihi",
+    "expectedAge": "Beklenen Yaş",
+    "preferences": "Tercihler",
+    "language": "Dil",
+    "languageTr": "Türkçe",
+    "languageEn": "English",
+    "about": "Hakkında",
+    "aboutText": "Vakit, İslam'da zamanın kıymetini hatırlatmak amacıyla geliştirilmiş bir uygulamadır.",
+    "version": "Sürüm",
+    "feedback": "Geri Bildirim",
+    "reset": "Sıfırla"
+  },
+  "onboarding": {
+    "welcome": "Hoş Geldiniz",
+    "appName": "Vakit",
+    "tagline": "Hayatının her anını bilinçli yaşa",
+    "start": "Başla",
+    "whyBirthDate": "Ömür farkındalığınızı hesaplamak için doğum tarihinize ihtiyacımız var.",
+    "enterBirthDate": "Doğum Tarihiniz",
+    "selectGender": "Cinsiyetiniz",
+    "male": "Erkek",
+    "female": "Kadın",
+    "expectedAgeInfo": "Hz. Peygamber (s.a.v.): 'Ümmetimin ömrü 60 ile 70 arasındadır.'",
+    "continue": "Devam",
+    "complete": "Tamamla",
+    "skip": "Atla"
+  },
+  "ad": {
+    "sponsorText": "Reklam Vermek / Sponsor Olmak İster Misiniz?",
+    "contactUs": "Bize Ulaşın"
+  },
+  "common": {
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "back": "Geri",
+    "next": "İleri",
+    "done": "Tamam"
+  }
+}
