@@ -64,7 +64,7 @@ export const lightColors = {
   statusBarStyle: 'dark' as const,
 };
 
-export type ThemeColors = typeof darkColors;
+export type ThemeColors = Omit<typeof darkColors, 'statusBarStyle'> & { statusBarStyle: 'light' | 'dark' };
 
 // Backward compatibility
 export const colors = darkColors;

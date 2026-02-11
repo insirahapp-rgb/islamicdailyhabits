@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, ViewStyle, TextStyle } from 'react-native';
+import { useThemeColors } from '../../hooks/useThemeColors';
 
 interface ButtonProps {
   title: string;
@@ -11,19 +12,21 @@ interface ButtonProps {
 }
 
 export function Button({ title, onPress, variant = 'primary', style, textStyle, disabled }: ButtonProps) {
+  const tc = useThemeColors();
+
   const buttonStyles = [
     styles.base,
-    variant === 'primary' && styles.primary,
-    variant === 'secondary' && styles.secondary,
-    variant === 'outline' && styles.outline,
+    variant === 'primary' && { backgroundColor: tc.primary },
+    variant === 'secondary' && { backgroundColor: tc.surfaceElevated },
+    variant === 'outline' && { backgroundColor: 'transparent', borderWidth: 1.5, borderColor: tc.primary },
     disabled && styles.disabled,
     style,
   ];
 
   const textStyles = [
     styles.text,
-    variant === 'outline' && styles.outlineText,
-    disabled && styles.disabledText,
+    variant === 'outline' && { color: tc.primary },
+    disabled && { color: tc.textMuted },
     textStyle,
   ];
 
@@ -42,17 +45,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  primary: {
-    backgroundColor: '#1B7A3D',
-  },
-  secondary: {
-    backgroundColor: '#242424',
-  },
-  outline: {
-    backgroundColor: 'transparent',
-    borderWidth: 1.5,
-    borderColor: '#1B7A3D',
-  },
   disabled: {
     opacity: 0.5,
   },
@@ -60,11 +52,5 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight: '600',
-  },
-  outlineText: {
-    color: '#1B7A3D',
-  },
-  disabledText: {
-    color: '#666666',
   },
 });
